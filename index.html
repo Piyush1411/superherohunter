@@ -2,49 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/60df0a97e4.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Superhero</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <title>SuperHero</title>
 </head>
 <body>
-    <h1>Search Your Favourite Superheros</h1>
-    <button class="btn btn-link" id="fav_button"> My Favourite Superheros</button>
-    
-    <form method="GET" onsubmit= "search()" id="form">
-        <div class="form-group">
-        <input type="text" class="form-control" id="user-input" placeholder="Enter Superhero Name">
-        <submit class="btn btn-outline-success" type="submit">Search</submit>
+    <nav>
+        <div class="left">
+            <a href="/" class="link">Home</a>
         </div>
-    </form>
+        <div class="search-container">
+            <img
+            class="search-icon"
+            src="https://cdn-icons-png.flaticon.com/512/1296/1296902.png"
+            alt="search-icon"
+          />
+        <input type="search" id="search" placeholder="Type Here to search superheroes..." autocomplete="off" />
+         </div>
+        <div class="right">
+            <a href="./favourites.html" class="link">favourites</a>
+        </div>
+    
+    </nav>  
+    
+    <main id="main">
+       
+        <div class="loader"> </div>
+            <ul id = "search-results-list">
 
+            </ul>
+       
+    </main>
+    <div id="toast"></div>
 
-    <div id="superheros-list">
-        <template id="template">
-            <div id="superhero">
-                <div id="info">
-                    <div id="name">
-                        Name
-                    </div>
-                    <div id="race">
-                        Race
-                    </div>
-                    <div id="gender">
-                        Gender
-                    </div>
-                    <i class="fas fa-heart" id="fav"></i>
-                    <i class="fas fa-info" id="more-info"></i>
-                </div>
-                <br>
-                <br>
-                <div id="image">
-                    <img>
-                </div>
-            </div>
-        </template>
-    </div>
+    <script src="js/common.js"></script>
+    <script src="js/index.js"></script>
 
-    <script src="./assets/js/index.js"></script>
+    <script>
+        Main.init();
+    </script>
+
 </body>
 </html>
